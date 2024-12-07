@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Thatha!</title>
+    <style>
+        h1 {
+            font-size: 50px;
+        }
+
+        body {
+            background-color: rgb(100, 200, 255);
+            color: red;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Happy 68th Birthday <span style="color:rgb(0, 0, 255)">Thatha!!!</span></h1>
+    Prime Numbers
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.7.0/lib/p5.js"></script>
+    <script>
+        function setup() {
+            createCanvas(800, 800)
+        }
+        let c = 1;
+        const bs=400;
+        function draw() {
+            try {
+                background(100,200,255)
+                textAlign(CENTER,CENTER)
+                for (let i = 0; i < c; i++) {
+                    for (let j = 1; j <= c; j++) {
+                        let x=i*Math.floor(c)+j;
+                        let prime=true;
+                        for(let k=2;k<=x/2;k++){
+                            if(x%k==0){
+                                prime=false;
+                                break;
+                            }
+                        }
+                        if(x==1){
+                            prime=false;
+                        }
+                        fill('red')
+                        if(prime){
+                            rect(800 / c * j -30, 800 / c * i , bs*2/c, bs*2/c)
+                            fill(100,200,255)
+                        }
+                        textSize(300 / c)
+                        text(x, 800 / c * j +(bs/c)-30, 800 / c * i +(bs/c))
+                    }
+                }
+                c += 0.01;
+            } catch {
+                loaction.reload()
+            }
+
+        }
+    </script>
+</body>
+
+</html>
